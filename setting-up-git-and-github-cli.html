@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>Setting Up Git and GitHub CLI</title>
+        <link rel="stylesheet" href="https://darthdanamesh.github.io/theme/css/main.css" />
+        <link href="https://darthdanamesh.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DarthDanAmesh Atom Feed" />
+        <meta name="description" content="Setting Up Git and GitHub CLI: A Quick Guide." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="https://darthdanamesh.github.io/">DarthDanAmesh</a></h1>
+                <nav><ul>
+                    <li><a href="https://darthdanamesh.github.io/pages/about.html">About</a></li>
+                    <li class="active"><a href="https://darthdanamesh.github.io/category/guides.html">Guides</a></li>
+                    <li><a href="https://darthdanamesh.github.io/category/tutorial.html">Tutorial</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://darthdanamesh.github.io/setting-up-git-and-github-cli.html" rel="bookmark"
+           title="Permalink to Setting Up Git and GitHub CLI">Setting Up Git and GitHub CLI</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2024-09-06T00:00:00+02:00">
+                Published: Fri 06 September 2024
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://darthdanamesh.github.io/author/darthdanamesh.html">DarthDanAmesh</a>
+        </address>
+<p>In <a href="https://darthdanamesh.github.io/category/guides.html">Guides</a>.</p>
+<p>tags: <a href="https://darthdanamesh.github.io/tag/github.html">Github</a> <a href="https://darthdanamesh.github.io/tag/workflow.html">Workflow</a> </p>
+</footer><!-- /.post-info -->      <h2>Setting Up Git and GitHub CLI: A Quick Guide</h2>
+<h3>Configure Git User Information</h3>
+<p>First, set up your Git user name and email:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;John Doe&quot;</span>
+$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;example@mail.com&quot;</span>
+</code></pre></div>
+
+<p>Verify your configuration</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--list
+</code></pre></div>
+
+<h2>Install GitHub CLI</h2>
+<p>Install the GitHub CLI (gh) to streamline your GitHub workflow. Follow these steps:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://cli.github.com/packages/githubcli-archive-keyring.gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/usr/share/keyrings/githubcli-archive-keyring.gpg
+</code></pre></div>
+
+<p>Add the GitHub CLI repository:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/github-cli.list<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+</code></pre></div>
+
+<p>Update your package list and install GitHub CLI:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>gh
+</code></pre></div>
+
+<h3>Authenticate GitHub CLI</h3>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>gh<span class="w"> </span>auth<span class="w"> </span>login
+$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>example_remote_repo
+</code></pre></div>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="https://darthdanamesh.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a rel="nofollow" href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
