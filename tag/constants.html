@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>DarthDanAmesh - constants</title>
+        <link rel="stylesheet" href="https://darthdanamesh.github.io/theme/css/main.css" />
+        <link href="https://darthdanamesh.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DarthDanAmesh Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="https://darthdanamesh.github.io/">DarthDanAmesh</a></h1>
+                <nav><ul>
+                    <li><a href="https://darthdanamesh.github.io/pages/about.html">About</a></li>
+                    <li><a href="https://darthdanamesh.github.io/category/guides.html">Guides</a></li>
+                    <li><a href="https://darthdanamesh.github.io/category/tutorial.html">Tutorial</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="https://darthdanamesh.github.io/basic-product-table-in-c.html">Basic Product Table in C</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2024-07-03T00:00:00+02:00">
+                Published: Wed 03 July 2024
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://darthdanamesh.github.io/author/darthdanamesh.html">DarthDanAmesh</a>
+        </address>
+<p>In <a href="https://darthdanamesh.github.io/category/guides.html">Guides</a>.</p>
+<p>tags: <a href="https://darthdanamesh.github.io/tag/2d-arrays.html">2D Arrays</a> <a href="https://darthdanamesh.github.io/tag/cc.html">C/C++</a> <a href="https://darthdanamesh.github.io/tag/ansi.html">ANSI</a> <a href="https://darthdanamesh.github.io/tag/constants.html">constants</a> <a href="https://darthdanamesh.github.io/tag/nested-loops.html">nested loops</a> </p>
+</footer><!-- /.post-info --><h2>Multiplication Table in C</h2>
+<p>A basic Math operation like multiplication is probably elementary. I have been playing around with the "OG" language, the C programming language. Here, I try to use 2-D arrays in C, and add a bit of color-coded output, to make mine a bit different. So this is my procedure where I learn other intricates of C language while creating a basic multiplication table. Math and programming can co-exist! Here is the code, you can compile using the online tool here:</p>
+<div class="highlight"><pre><span></span><code>/******************************************************************************
+<span class="w">                            </span>Online<span class="w"> </span>C<span class="w"> </span>Compiler.
+<span class="w">                </span>Code,<span class="w"> </span>Compile,<span class="w"> </span>Run<span class="w"> </span>and<span class="w"> </span>Debug<span class="w"> </span>C<span class="w"> </span>program<span class="w"> </span>online.
+Write<span class="w"> </span>your<span class="w"> </span>code<span class="w"> </span><span class="k">in</span><span class="w"> </span>this<span class="w"> </span>editor<span class="w"> </span>and<span class="w"> </span>press<span class="w"> </span><span class="s2">&quot;Run&quot;</span><span class="w"> </span>button<span class="w"> </span>to<span class="w"> </span>compile<span class="w"> </span>and<span class="w"> </span>execute<span class="w"> </span>it.
+*******************************************************************************/
+<span class="c1">#include &lt;stdio.h&gt;</span>
+<span class="c1">#define TSIZE 15</span>
+<span class="c1">#define ANSI_COLOR_RED     &quot;\x1b[31m&quot;</span>
+<span class="c1">#define ANSI_COLOR_GREEN   &quot;\x1b[32m&quot;</span>
+<span class="c1">#define ANSI_COLOR_YELLOW  &quot;\x1b[33m&quot;</span>
+<span class="c1">#define ANSI_COLOR_BLUE &quot;\x1b[42m&quot;</span>
+<span class="c1">#define ANSI_COLOR_BLUE_BACKGROUND &quot;\x1b[44m&quot;</span>
+int<span class="w"> </span>main<span class="o">()</span>
+<span class="o">{</span>
+<span class="w">    </span>int<span class="w"> </span>c<span class="p">;</span>
+<span class="w">    </span>int<span class="w"> </span><span class="nv">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="w">    </span>int<span class="w"> </span>mdigit<span class="o">[</span>TSIZE<span class="o">][</span>TSIZE<span class="o">]</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="o">(</span>int<span class="w"> </span><span class="nv">r</span><span class="o">=</span><span class="m">0</span><span class="p">;</span><span class="w"> </span>r&lt;TSIZE<span class="p">;</span><span class="w"> </span>r++<span class="o">){</span>
+<span class="w">        </span><span class="k">for</span><span class="o">(</span>int<span class="w"> </span><span class="nv">c</span><span class="o">=</span><span class="m">0</span><span class="p">;</span><span class="w"> </span>c&lt;TSIZE<span class="p">;</span><span class="w"> </span>c++<span class="o">){</span>
+<span class="w">            </span>mdigit<span class="o">[</span>r<span class="o">][</span>c<span class="o">]=</span><span class="w"> </span><span class="o">(</span>r+1<span class="o">)</span><span class="w"> </span>*<span class="w"> </span><span class="o">(</span>c+1<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//<span class="w"> </span>Print<span class="w"> </span>column<span class="w"> </span>headers
+<span class="w">    </span>printf<span class="o">(</span>ANSI_COLOR_BLUE_BACKGROUND<span class="s2">&quot;      &quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;TSIZE<span class="p">;</span><span class="w"> </span>i++<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>printf<span class="o">(</span><span class="w"> </span>ANSI_COLOR_GREEN<span class="w"> </span><span class="s2">&quot;x %2d |&quot;</span>,<span class="w"> </span>i+1<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>printf<span class="o">(</span><span class="s2">&quot;\n&quot;</span><span class="o">)</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">for</span><span class="o">(</span>int<span class="w"> </span><span class="nv">r</span><span class="o">=</span><span class="m">0</span><span class="p">;</span><span class="w"> </span>r&lt;TSIZE<span class="p">;</span><span class="w"> </span>r++<span class="o">){</span>
+<span class="w">        </span>//<span class="w"> </span>print<span class="w"> </span>the<span class="w"> </span>row<span class="w"> </span>headers
+<span class="w">        </span>printf<span class="o">(</span>ANSI_COLOR_RED<span class="w"> </span><span class="s2">&quot;%4d |&quot;</span>,<span class="w"> </span>r+1<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>//<span class="w"> </span>print<span class="w"> </span>r*c
+<span class="w">        </span><span class="k">for</span><span class="o">(</span>int<span class="w"> </span><span class="nv">c</span><span class="o">=</span><span class="m">0</span><span class="p">;</span><span class="w"> </span>c&lt;TSIZE<span class="p">;</span><span class="w"> </span>c++<span class="o">){</span>
+<span class="w">            </span>printf<span class="o">(</span>ANSI_COLOR_YELLOW<span class="w"> </span><span class="s2">&quot;%4d |&quot;</span>,mdigit<span class="o">[</span>r<span class="o">][</span>c<span class="o">])</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">        </span>printf<span class="o">(</span><span class="s2">&quot;\n&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<p>In the above code (its complete and runs in the compiler) I utilize ANSI escape codes for color styling, similar to the way UNIX files and directories are highlighted using different colors in the terminal. </p>
+<p>In the above case, I have 15 rows, for a 15 by 15 multiplication table. You can also change to the desired row size by adjusting the macro in the full code: </p>
+<div class="highlight"><pre><span></span><code>#define TSIZE 15 // &lt;-- change this number value to your preferred.
+</code></pre></div>
+
+<p>Checkout the output in the image below. I think it is pretty cool.
+<img alt="Multiplication Table in C" src="https://darthdanamesh.github.io/images/product.png"></p>
+<p>This gives a green color for the column headers specified by the value "\x1b[32m" in the pre-processor directive ANSI_COLOR_GREEN.</p>
+<p>A nice way to create constants in the C language is through pre-processor directives. </p>
+<p>Moreover, the red and yellow highlighting is given by the codes "\x1b[31m", and "\x1b[33m", which are accessed easily with their respective pre-processor directives. </p>
+<p>The background is also provided using the directive ANSI_COLOR_BLUE_BACKGROUND set to the code value of "\x1b[44m".</p>
+<p>The following references helped:</p>
+<p>References</p>
+<ol>
+<li>https://stackoverflow.com/questions/3219393/stdlib-and-colored-output-in-c</li>
+<li>https://en.wikipedia.org/wiki/ANSI_escape_code#Colors</li>
+</ol>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="https://darthdanamesh.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a rel="nofollow" href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
