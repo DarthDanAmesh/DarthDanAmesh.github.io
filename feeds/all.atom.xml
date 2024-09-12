@@ -134,4 +134,31 @@ int&lt;span class="w"&gt; &lt;/span&gt;main&lt;span class="o"&gt;()&lt;/span&gt;
 &lt;ol&gt;
 &lt;li&gt;https://stackoverflow.com/questions/3219393/stdlib-and-colored-output-in-c&lt;/li&gt;
 &lt;li&gt;https://en.wikipedia.org/wiki/ANSI_escape_code#Colors&lt;/li&gt;
-&lt;/ol&gt;</content><category term="Guides"></category><category term="2D Arrays"></category><category term="C/C++"></category><category term="pre-processor directives"></category><category term="ANSI"></category><category term="constants"></category><category term="nested loops"></category></entry></feed>
+&lt;/ol&gt;</content><category term="Guides"></category><category term="2D Arrays"></category><category term="C/C++"></category><category term="pre-processor directives"></category><category term="ANSI"></category><category term="constants"></category><category term="nested loops"></category></entry><entry><title>Installing Docker for Parrot OS</title><link href="https://darthdanamesh.github.io/installing-docker-for-parrot-os.html" rel="alternate"></link><published>2022-05-06T00:00:00+02:00</published><updated>2022-05-06T00:00:00+02:00</updated><author><name>DarthDanAmesh</name></author><id>tag:darthdanamesh.github.io,2022-05-06:/installing-docker-for-parrot-os.html</id><summary type="html">&lt;p&gt;Guide to install Docker.&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Terminal Commands&lt;/h3&gt;
+&lt;p&gt;Open your terminal and type the following commands :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$sudo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Install docker dependencies&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$sudo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;apt-transport-https&lt;span class="w"&gt; &lt;/span&gt;ca-certificates&lt;span class="w"&gt; &lt;/span&gt;curl&lt;span class="w"&gt; &lt;/span&gt;gnupg&lt;span class="w"&gt; &lt;/span&gt;lsb-release&lt;span class="w"&gt; &lt;/span&gt;-y
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Get the docker PGP key&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$curl&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-fsSL&lt;span class="w"&gt; &lt;/span&gt;https://download.docker.com/linux/debian/gpg&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;gpg&lt;span class="w"&gt; &lt;/span&gt;--dearmor&lt;span class="w"&gt; &lt;/span&gt;-o&lt;span class="w"&gt; &lt;/span&gt;/usr/share/keyrings/docker-archive-keyring.gpg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In the command below be sure to replace with whatever version of debian you are running, i.e., buster, bullseye, stretch&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;deb [arch=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;dpkg&lt;span class="w"&gt; &lt;/span&gt;--print-architecture&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt; signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian buster stable&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;tee&lt;span class="w"&gt; &lt;/span&gt;/etc/apt/sources.list.d/docker.list&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;/dev/null
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Perform an update for installed binaries. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$sudo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;update
+&lt;span class="nv"&gt;$sudo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;-y&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;docker-ce&lt;span class="w"&gt; &lt;/span&gt;docker-ce-cli&lt;span class="w"&gt; &lt;/span&gt;containerd.io
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Add Username to Docker Group&lt;/h3&gt;
+&lt;p&gt;Sometimes you do not want to use docker with sudo account. You can add another username to docker group so that sudo command is not necessary for the docker user&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$sudo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;usermod&lt;span class="w"&gt; &lt;/span&gt;-aG&lt;span class="w"&gt; &lt;/span&gt;docker&lt;span class="w"&gt; &lt;/span&gt;your_username
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;That's it. You should be able to run docker commands in your system. &lt;/p&gt;</content><category term="Guides"></category><category term="Docker"></category><category term="Linux"></category></entry></feed>
