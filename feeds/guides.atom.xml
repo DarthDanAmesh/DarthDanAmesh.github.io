@@ -123,4 +123,131 @@ int&lt;span class="w"&gt; &lt;/span&gt;main&lt;span class="o"&gt;()&lt;/span&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$sudo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;usermod&lt;span class="w"&gt; &lt;/span&gt;-aG&lt;span class="w"&gt; &lt;/span&gt;docker&lt;span class="w"&gt; &lt;/span&gt;your_username
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;That's it. You should be able to run docker commands in your system. &lt;/p&gt;</content><category term="Guides"></category><category term="Docker"></category><category term="Linux"></category></entry></feed>
+&lt;p&gt;That's it. You should be able to run docker commands in your system. &lt;/p&gt;
+&lt;h2&gt;Docker&lt;/h2&gt;
+&lt;p&gt;This part was first created Monday, March 7, 2022. From my Securanalyst.blogspot.com&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$docker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;images
+&lt;span class="nv"&gt;$docker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;search&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;image&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Downloading an image&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$docker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;pull&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;image&lt;span class="o"&gt;]&lt;/span&gt;
+
+//&lt;span class="w"&gt; &lt;/span&gt;example&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;an&lt;span class="w"&gt; &lt;/span&gt;ubuntu&lt;span class="w"&gt; &lt;/span&gt;image
+&lt;span class="nv"&gt;$docker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;pull&lt;span class="w"&gt; &lt;/span&gt;ubuntu
+
+Alternatively
+
+&lt;span class="nv"&gt;$docker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;image&lt;span class="o"&gt;]&lt;/span&gt;
+//&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;image
+&lt;span class="nv"&gt;$docker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;ubuntu
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Useful information about containers&lt;/h3&gt;
+&lt;p&gt;To get a list of all running containers&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$docker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;ps
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This will exit, because it is not set to run in the background capabilities. To make this run in the background run&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$docker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;-it&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;ubuntu
+//&lt;span class="w"&gt; &lt;/span&gt;where&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;flag&lt;span class="w"&gt; &lt;/span&gt;-it&lt;span class="w"&gt; &lt;/span&gt;stands&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;interactive&lt;span class="w"&gt; &lt;/span&gt;terminal
+//&lt;span class="w"&gt; &lt;/span&gt;where&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;flag&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;activates&lt;span class="w"&gt; &lt;/span&gt;daemon&lt;span class="w"&gt; &lt;/span&gt;/&lt;span class="w"&gt; &lt;/span&gt;service&lt;span class="w"&gt; &lt;/span&gt;mode
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To get a list of all exited containers&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$docker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;ps&lt;span class="w"&gt; &lt;/span&gt;-a
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You can also type the first few unique characters of the id&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$docker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;attach&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;CONTAINER&lt;span class="w"&gt; &lt;/span&gt;ID&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Image persistance&lt;/h3&gt;
+&lt;p&gt;To make this image persist press the key sequence below while not letting go off Cntrl key:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Ctrl&lt;span class="w"&gt; &lt;/span&gt;+&lt;span class="w"&gt; &lt;/span&gt;p&lt;span class="w"&gt; &lt;/span&gt;
+Ctrl&lt;span class="w"&gt; &lt;/span&gt;+&lt;span class="w"&gt; &lt;/span&gt;q
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Even when you exit (Ctrl+d), this container will persist.&lt;/p&gt;
+&lt;h3&gt;Run bash&lt;/h3&gt;
+&lt;p&gt;To run a bash or any other pre-inbuilt ubuntu command inside the ubuntu container image&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$docker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;-it&lt;span class="w"&gt; &lt;/span&gt;ubuntu&lt;span class="w"&gt; &lt;/span&gt;/bin/bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This will open up a bash shell similar to ubuntu, with ubuntu capabilities quite similar to the wsl, which is absolutely awesome.&lt;/p&gt;
+&lt;p&gt;To exit, Ctrl + d&lt;/p&gt;
+&lt;h2&gt;Accessing Apps&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$docker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;-it&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;8080&lt;/span&gt;:80&lt;span class="w"&gt; &lt;/span&gt;nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This ports are not accessible (by default) outside the container for security purposes. Access the nginx on localhost with the port on the browser to stop the process&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$docker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;stop&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;container_id&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Run web app&lt;/h3&gt;
+&lt;p&gt;To run web applications on container, that we want to run continuously.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$docker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;-it&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;--restart&lt;span class="w"&gt; &lt;/span&gt;unless-stopped&lt;span class="w"&gt; &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;8080&lt;/span&gt;:80&lt;span class="w"&gt; &lt;/span&gt;nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To remove a container:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$docker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;rm&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;container_id&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Saving changes to image&lt;/h3&gt;
+&lt;p&gt;To save changes to image like ubuntu&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$docker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;-it&lt;span class="w"&gt; &lt;/span&gt;ubuntu
+&lt;span class="nv"&gt;$apt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;udpate
+&lt;span class="nv"&gt;$apt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;dist-upgrade
+&lt;span class="nv"&gt;$apt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;apache2
+$/etc/init.d/apache2&lt;span class="w"&gt; &lt;/span&gt;status
+$/etc/init.d/apache2&lt;span class="w"&gt; &lt;/span&gt;start
+&lt;span class="nv"&gt;$apt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;vim-nox
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Commit changes&lt;/h3&gt;
+&lt;p&gt;Disconnect using: Ctrl + p Ctrl + q&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;docker&lt;span class="w"&gt; &lt;/span&gt;commit&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;container_id&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;preferred&lt;span class="w"&gt; &lt;/span&gt;name&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;image:version&lt;span class="w"&gt; &lt;/span&gt;number&lt;span class="o"&gt;]&lt;/span&gt;
+
+//&lt;span class="w"&gt; &lt;/span&gt;For&lt;span class="w"&gt; &lt;/span&gt;example
+&lt;span class="nv"&gt;$docker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;commit&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;container-id&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;docker&lt;span class="w"&gt; &lt;/span&gt;build&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;lltv/apache:1.0&lt;span class="w"&gt; &lt;/span&gt;.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The period (.) at the end is to create the image in current directory&lt;/p&gt;
+&lt;h2&gt;Automate the process by creating a Dockerfile&lt;/h2&gt;
+&lt;p&gt;First, create and open file called "Dockerfile"&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$touch&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Dockerfile
+&lt;span class="nv"&gt;$nano&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Dockerfile
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then you can paste the following (Edit where necessary): &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;FROM&lt;span class="w"&gt; &lt;/span&gt;ubuntu
+MAINTAINER&lt;span class="w"&gt; &lt;/span&gt;your_username&lt;span class="w"&gt; &lt;/span&gt;&amp;lt;your_email@example.com&amp;gt;
+
+&lt;span class="c1"&gt;# Skip prompts&lt;/span&gt;
+ARG&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;DEBIAN_FRONTEND&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;noninteractive
+
+&lt;span class="c1"&gt;# Update packages&lt;/span&gt;
+RUN&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;update&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;dist-upgrade&lt;span class="w"&gt; &lt;/span&gt;-y
+
+&lt;span class="c1"&gt;# Install packages&lt;/span&gt;
+RUN&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;-y&lt;span class="w"&gt; &lt;/span&gt;apache2&lt;span class="w"&gt; &lt;/span&gt;vim-nox
+
+&lt;span class="c1"&gt;# Set entrypoint&lt;/span&gt;
+ENTRYPOINT&lt;span class="w"&gt; &lt;/span&gt;apache2ctl&lt;span class="w"&gt; &lt;/span&gt;-D&lt;span class="w"&gt; &lt;/span&gt;FOREGROUND
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then save and exit nano. &lt;/p&gt;
+&lt;p&gt;The next command must be run from the same location that contains the Dockerfile&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$docker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;build&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;lltv/apache:1.1&lt;span class="w"&gt; &lt;/span&gt;.
+
+//&lt;span class="w"&gt; &lt;/span&gt;Important!&lt;span class="w"&gt; &lt;/span&gt;note&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;period&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;.&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;at&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;to remove an image&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$docker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;images
+&lt;span class="nv"&gt;$docker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;rmi&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;image&lt;span class="w"&gt; &lt;/span&gt;id&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If you encounter any error; refer to the container id and remove it using: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker&lt;span class="w"&gt; &lt;/span&gt;rm&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;container_id&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Guides"></category><category term="Docker"></category><category term="Linux"></category></entry></feed>
