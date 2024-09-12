@@ -24,7 +24,7 @@ $&lt;span class="w"&gt; &lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;conf
 $&lt;span class="w"&gt; &lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;gh
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h3&gt;Authenticate GitHub CLI&lt;/h3&gt;
+&lt;h2&gt;Authenticate GitHub CLI&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;gh&lt;span class="w"&gt; &lt;/span&gt;auth&lt;span class="w"&gt; &lt;/span&gt;login
 $&lt;span class="w"&gt; &lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;example_remote_repo
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Guides"></category><category term="Github"></category><category term="Workflow"></category></entry><entry><title>Basic Product Table in C</title><link href="https://darthdanamesh.github.io/basic-product-table-in-c.html" rel="alternate"></link><published>2024-07-03T00:00:00+02:00</published><updated>2024-07-03T00:00:00+02:00</updated><author><name>DarthDanAmesh</name></author><id>tag:darthdanamesh.github.io,2024-07-03:/basic-product-table-in-c.html</id><summary type="html">&lt;p&gt;TLDR; A simple Multiplication table in C, with color-coded output.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Multiplication Table in C&lt;/h2&gt;
@@ -80,13 +80,20 @@ int&lt;span class="w"&gt; &lt;/span&gt;main&lt;span class="o"&gt;()&lt;/span&gt;
 
 &lt;p&gt;Checkout the output in the image below. I think it is pretty cool.
 &lt;img alt="Multiplication Table in C" src="https://darthdanamesh.github.io/images/product.png"&gt;&lt;/p&gt;
-&lt;p&gt;This gives a green color for the column headers specified by the value "\x1b[32m" in the pre-processor directive ANSI_COLOR_GREEN.&lt;/p&gt;
-&lt;p&gt;A nice way to create constants in the C language is through pre-processor directives. &lt;/p&gt;
-&lt;p&gt;Moreover, the red and yellow highlighting is given by the codes "\x1b[31m", and "\x1b[33m", which are accessed easily with their respective pre-processor directives. &lt;/p&gt;
-&lt;p&gt;The background is also provided using the directive ANSI_COLOR_BLUE_BACKGROUND set to the code value of "\x1b[44m".&lt;/p&gt;
+&lt;h3&gt;ANSI Codes for Color&lt;/h3&gt;
+&lt;p&gt;Specify the in the pre-processor directive ANSI_COLOR_GREEN value below:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;\x1b[32m
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This will provide our output with a green color for the column headers.&lt;/p&gt;
+&lt;h3&gt;Pre-processor Directives&lt;/h3&gt;
+&lt;p&gt;A nice way to create constants in the C language is through pre-processor directives. Moreover, the red and yellow highlighting is given by the codes "\x1b[31m", and "\x1b[33m", which are accessed easily with their respective pre-processor directives. The background is also provided using the directive ANSI_COLOR_BLUE_BACKGROUND set to the code value below:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;\x1b[44m
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;The following references helped:&lt;/p&gt;
-&lt;p&gt;References&lt;/p&gt;
+&lt;h2&gt;References&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;https://stackoverflow.com/questions/3219393/stdlib-and-colored-output-in-c&lt;/li&gt;
 &lt;li&gt;https://en.wikipedia.org/wiki/ANSI_escape_code#Colors&lt;/li&gt;
-&lt;/ol&gt;</content><category term="Guides"></category><category term="2D Arrays"></category><category term="C/C++"></category><category term="ANSI"></category><category term="constants"></category><category term="nested loops"></category></entry></feed>
+&lt;/ol&gt;</content><category term="Guides"></category><category term="2D Arrays"></category><category term="C/C++"></category><category term="pre-processor directives"></category><category term="ANSI"></category><category term="constants"></category><category term="nested loops"></category></entry></feed>

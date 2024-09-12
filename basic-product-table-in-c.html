@@ -37,7 +37,7 @@
                 By                         <a class="url fn" href="https://darthdanamesh.github.io/author/darthdanamesh.html">DarthDanAmesh</a>
         </address>
 <p>In <a href="https://darthdanamesh.github.io/category/guides.html">Guides</a>.</p>
-<p>tags: <a href="https://darthdanamesh.github.io/tag/2d-arrays.html">2D Arrays</a> <a href="https://darthdanamesh.github.io/tag/cc.html">C/C++</a> <a href="https://darthdanamesh.github.io/tag/ansi.html">ANSI</a> <a href="https://darthdanamesh.github.io/tag/constants.html">constants</a> <a href="https://darthdanamesh.github.io/tag/nested-loops.html">nested loops</a> </p>
+<p>tags: <a href="https://darthdanamesh.github.io/tag/2d-arrays.html">2D Arrays</a> <a href="https://darthdanamesh.github.io/tag/cc.html">C/C++</a> <a href="https://darthdanamesh.github.io/tag/pre-processor-directives.html">pre-processor directives</a> <a href="https://darthdanamesh.github.io/tag/ansi.html">ANSI</a> <a href="https://darthdanamesh.github.io/tag/constants.html">constants</a> <a href="https://darthdanamesh.github.io/tag/nested-loops.html">nested loops</a> </p>
 </footer><!-- /.post-info -->      <h2>Multiplication Table in C</h2>
 <p>A basic Math operation like multiplication is probably elementary. I have been playing around with the "OG" language, the C programming language. Here, I try to use 2-D arrays in C, and add a bit of color-coded output, to make mine a bit different. So this is my procedure where I learn other intricates of C language while creating a basic multiplication table. Math and programming can co-exist! Here is the code, you can compile using the online tool here:</p>
 <div class="highlight"><pre><span></span><code>/******************************************************************************
@@ -91,12 +91,19 @@ int<span class="w"> </span>main<span class="o">()</span>
 
 <p>Checkout the output in the image below. I think it is pretty cool.
 <img alt="Multiplication Table in C" src="https://darthdanamesh.github.io/images/product.png"></p>
-<p>This gives a green color for the column headers specified by the value "\x1b[32m" in the pre-processor directive ANSI_COLOR_GREEN.</p>
-<p>A nice way to create constants in the C language is through pre-processor directives. </p>
-<p>Moreover, the red and yellow highlighting is given by the codes "\x1b[31m", and "\x1b[33m", which are accessed easily with their respective pre-processor directives. </p>
-<p>The background is also provided using the directive ANSI_COLOR_BLUE_BACKGROUND set to the code value of "\x1b[44m".</p>
+<h3>ANSI Codes for Color</h3>
+<p>Specify the in the pre-processor directive ANSI_COLOR_GREEN value below:</p>
+<div class="highlight"><pre><span></span><code>\x1b[32m
+</code></pre></div>
+
+<p>This will provide our output with a green color for the column headers.</p>
+<h3>Pre-processor Directives</h3>
+<p>A nice way to create constants in the C language is through pre-processor directives. Moreover, the red and yellow highlighting is given by the codes "\x1b[31m", and "\x1b[33m", which are accessed easily with their respective pre-processor directives. The background is also provided using the directive ANSI_COLOR_BLUE_BACKGROUND set to the code value below:</p>
+<div class="highlight"><pre><span></span><code>\x1b[44m
+</code></pre></div>
+
 <p>The following references helped:</p>
-<p>References</p>
+<h2>References</h2>
 <ol>
 <li>https://stackoverflow.com/questions/3219393/stdlib-and-colored-output-in-c</li>
 <li>https://en.wikipedia.org/wiki/ANSI_escape_code#Colors</li>
